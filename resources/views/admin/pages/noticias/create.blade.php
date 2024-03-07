@@ -81,7 +81,6 @@
                                     <input type="text" name="titulo" class="form-control">
                                     <label for="">Descrição</label>
                                     <input type="text" name="desc" class="form-control">
-                                    <label for="">Conteúdo</label>
                                     <div class="form-group">
                                         <label for="customFile">Conteúdo</label>
                                         <div class="mb-3">

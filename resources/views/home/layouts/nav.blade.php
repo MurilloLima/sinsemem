@@ -71,7 +71,7 @@
                  <form action="{{ route('login') }}" method="post">
                      @csrf
                      <label for="">CPF</label>
-                     <input type="text" name="email" oninput="mascara(this)" class="form-control">
+                     <input type="text" name="email" class="form-control">
                      <x-input-error :messages="$errors->get('email')" class="mt-2" />
                      <label for="">Senha</label>
                      <input type="password" name="password" class="form-control">

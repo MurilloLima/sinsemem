@@ -65,7 +65,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/users', [UserController::class, 'index'])->name('admin.pages.users.index');
 
      //servidores
-     Route::get('admin/servidores', [UserController::class, 'servidores'])->name('admin.pages.servidores.create');
+     Route::get('admin/servidores', [UserController::class, 'index'])->name('admin.pages.servidores.index');
+     Route::get('admin/servidores/create', [UserController::class, 'servidores'])->name('admin.pages.servidores.create');
      Route::post('admin/servidores/store', [UserController::class, 'servistore'])->name('admin.pages.servidores.store');
 
     // user admin
