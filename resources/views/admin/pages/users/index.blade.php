@@ -27,10 +27,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                        <a href="" class="btn btn-primary" style="margin-bottom: 5px">
+                            Cadastrar
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Servidores</h3>
-                            </div>
                             <div class="card-body">
                                 <table class="table table-bordered">
                                     <thead>
