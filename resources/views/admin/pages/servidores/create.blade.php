@@ -73,19 +73,29 @@
                             <form action="{{ route('admin.pages.servidores.store') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
-                                
+
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-6">
                                             <label for="">Nome</label>
                                             <input type="text" name="name" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">E-mail</label>
+                                            <input type="text" name="name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="">CPF</label>
+                                            <input type="text" name="matricula" class="form-control">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="">Matrícula</label>
                                             <input type="text" name="matricula" class="form-control">
                                         </div>
-                                        
-                                        <div class="col-md-4">
+
+                                        <div class="col-md-3">
                                             <label for="">Estado civíl</label>
                                             <select name="estado_civil" class="form-control">
                                                 <option value=""></option>
@@ -97,23 +107,25 @@
                                                 <option value="Amasiado">Amasiado</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <label for="">Endereco</label>
+                                        <div class="col-md-4">
+                                            <label for="">Nacionalidade</label>
+                                            <input type="text" name="nacionalidade" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Endereço</label>
                                             <input type="text" name="endereco" class="form-control">
                                         </div>
-                                        <div class="col-md-2">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
                                             <label for="">CEP</label>
                                             <input type="text" name="cep" class="form-control">
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-6">
                                             <label for="">Cidade</label>
                                             <input type="text" name="cidade" class="form-control">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="">UF</label>
                                             <select name="uf" class="form-control">
                                                 <option value=""></option>
@@ -146,12 +158,8 @@
                                                 <option value="TO">Tocantins</option>
                                             </select>
                                         </div>
-                                        
-                                        <div class="col-md-4">
-                                            <label for="">Nacionalidade</label>
-                                            <input type="text" name="nacionalidade" class="form-control">
-                                        </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col-md-3">
                                             <label for="">natural</label>
@@ -163,7 +171,8 @@
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">CPF</label>
-                                            <input type="text" name="email" oninput="mascara(this)" class="form-control">
+                                            <input type="text" name="email" oninput="mascara(this)"
+                                                class="form-control">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="">Cargo</label>

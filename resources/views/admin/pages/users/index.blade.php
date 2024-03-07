@@ -27,7 +27,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="" class="btn btn-primary" style="margin-bottom: 5px">
+                        <a href="{{ route('admin.pages.servidores.create') }}" class="btn btn-primary"
+                            style="margin-bottom: 5px">
                             Cadastrar
                         </a>
                     </div>
