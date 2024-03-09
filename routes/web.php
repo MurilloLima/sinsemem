@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\NoticiasController;
 use App\Http\Controllers\Admin\CongressoController;
+use App\Http\Controllers\Admin\InscricaoController;
 use App\Http\Controllers\Admin\ReunioesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ArquivoController;
@@ -31,6 +32,8 @@ Route::get('app/download/', [HomeController::class, 'download'])->name('home.pag
 //politica
 Route::get('politica/', [HomeController::class, 'politica'])->name('home.pages.politica');
 
+// //login
+// Route::post('auth/', [HomeController::class, 'authenticate'])->name('home.authenticate');
 
 
 // administrativo
@@ -82,8 +85,9 @@ Route::middleware('auth')->group(function () {
     //view user
     Route::get('/view/user/{id}', [UserController::class, 'view'])->name('admin.user.view');
 
-    //ficha inscricao
+    //inscricao
     Route::get('admin/ficha/inscricao/', [UserController::class, 'index'])->name('admin.pages.ficha.index');
+    Route::get('admin/ficha/inscricao/create', [InscricaoController::class, 'create'])->name('admin.pages.ficha.create');
     Route::post('admin/ficha/inscricao/update', [UserController::class, 'update'])->name('admin.pages.ficha.update');
 
     //mensagem
@@ -94,6 +98,10 @@ Route::middleware('auth')->group(function () {
 
     //carteira
     Route::get('admin/carteira', [UserController::class, 'carteira'])->name('admin.pages.carteira.index');
+
+    //altera foto
+    Route::post('admin/foto/perfil', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
+
 
 });
 

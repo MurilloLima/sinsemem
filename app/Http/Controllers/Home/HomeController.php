@@ -7,6 +7,7 @@ use App\Models\Congresso;
 use App\Models\Noticia;
 use App\Models\Reunioe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -75,4 +76,5 @@ class HomeController extends Controller
     {
         //
     }
+
 }

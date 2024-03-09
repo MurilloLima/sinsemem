@@ -30,6 +30,25 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger text-center" style="margin: 10px;">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li style="text-align: center">{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if (session('msg'))
+                                    <div class="row text-center">
+                                        <div class="col-md-12" \>
+                                            <div class="alert alert-success text-center"
+                                                style="color: white; margin: 10px;">
+                                                {{ session('msg') }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="card card-danger">
                                     <div class="card-header">
                                         <h3 class="card-title">Carteira de sócio</h3>
@@ -39,8 +58,8 @@
                                             <div class="col-sm-12">
                                                 <div class="carteira">
                                                     <div class="logocarteira">
-                                                        <img src="{{ asset('home/assets/images/logo200x200px.png') }}" height="60" width="60"
-                                                            alt="" width="100px">
+                                                        <img src="{{ asset('home/assets/images/logo200x200px.png') }}"
+                                                            height="60" width="60" alt="" width="100px">
                                                     </div>
                                                     <div class="text-header">
                                                         <p>SINDICATO DOS SERVIDORES DA EDUCAÇÃO <br>
@@ -49,12 +68,13 @@
                                                         </p>
                                                     </div>
                                                     <div class="bolder"></div>
-                                                    <div class="foto-user">
-                                                        <img src="{{ asset('home/assets/images/perfil.png') }}"
+                                                    <div class="foto-user text-center">
+                                                        <img src="{{ asset('upload/fotoperfil/' . auth()->user()->img) }}"
                                                             alt="">
+
                                                         <a href="" data-toggle="modal"
-                                                        data-target="#modal-sm">Alterar</a>
-                                                        
+                                                            data-target="#modal-default">Alterar</a>
+
                                                     </div>
                                                     <p class="nomeuser">NOME: {{ auth()->user()->name }}</p>
                                                     <p class="nomeuser">CARGO: {{ auth()->user()->cargo }} </p>
@@ -140,4 +160,42 @@
         <!-- /.content -->
     </div>
 
+
+    {{-- //modal --}}
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Alterar foto perfil</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.pages.carteira.foto') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputFile">Imagem</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="img">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fecha</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 @endsection

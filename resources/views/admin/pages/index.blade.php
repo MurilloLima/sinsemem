@@ -30,7 +30,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-2 col-3">
-                                <a href="" class="btn btn-app bg-danger">
+                                <a href="{{ route('admin.pages.ficha.create') }}" class="btn btn-app bg-danger">
                                     <i class="fas fa-edit"></i>Inscrição
                                 </a>
                             </div>

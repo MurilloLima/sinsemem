@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('role')->nullable()->default(2); //2 cliente, 1 admin
             $table->string('img')->nullable()->default('perfil.png'); //2 cliente, 1 admin
             $table->string('estado_civil')->nullable();
-            $table->string('matricula')->nullable()->unique();
+            $table->string('matricula')->nullable();
             $table->string('endereco')->nullable();
             $table->text('cep')->nullable();
             $table->text('cidade')->nullable();

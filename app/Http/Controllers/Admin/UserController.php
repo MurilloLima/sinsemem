@@ -145,7 +145,7 @@ class UserController extends Controller
                 'nacionalidade' => 'required',
                 'natural' => 'required',
                 'rg' => 'required',
-                'email' => 'required',
+                // 'email' => 'required',
                 'cargo' => 'required',
                 'nivel' => 'required',
                 'lotacao' => 'required',
@@ -164,22 +164,46 @@ class UserController extends Controller
         $data->uf = $request->uf;
         $data->natural = $request->natural;
         $data->rg = $request->rg;
-        $data->email = $request->email; //cpf
+        // $data->email = $request->email; //email
         $data->cargo = $request->cargo;
         $data->nivel = $request->nivel;
         $data->lotacao = $request->lotacao;
         $data->pai = $request->pai;
         $data->mae = $request->mae;
         $data->save();
-        return redirect()->back()->with('msg', 'Inscrição salva com sucesso!');
+        return redirect()->back()->with('msg', 'Inscrição realizada com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function foto(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'img' => 'required',
+            ]
+        );
+
+        $data = User::find(auth()->user()->id);
+        // upload de image
+        if ($request->hasFile('img') && $request->file('img')->isValid()) {
+            # code...
+            $image = $request->file('img');
+            // Define um aleatório para o arquivo baseado no timestamps atual
+            $name = uniqid(date('HisYmd'));
+
+            // Recupera a extensão do arquivo
+            $extension = $image->extension();
+
+            // Define finalmente o nome
+            $nameFile = "{$name}.{$extension}";
+
+            $image->move(public_path('upload/fotoperfil/'), $nameFile);
+            $data->img = $nameFile;
+            $data->save();
+            return redirect()->back()->with('msg', 'Foto alterada com sucesso!');
+        }
     }
 
     public function view($id)

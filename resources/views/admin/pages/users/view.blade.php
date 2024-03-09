@@ -33,11 +33,23 @@
                             </div>
 
                             <div class="card-body">
-                                <p>Nome: {{ $data->name }}</p>
-                                <p>Matricula: {{ $data->matricula }}</p>
-                                <p>Sexo: {{ $data->sexo }}</p>
-                                <p>Endereco: {{ $data->endereco }}</p>
-                                <p>E-mail: {{ $data->email }}</p>
+                                <p><strong>Nome:</strong> {{ $data->name }}</p>
+                                <p><strong>Sexo:</strong> {{ $data->sexo }}</p>
+                                <p><strong>Matricula:</strong> {{ $data->matricula }}</p>
+                                <p><strong>E-mail:</strong> {{ $data->email }}</p>
+                                <p><strong>Endereco:</strong>{{ $data->endereco }}</p>
+                                <p><strong>CEP:</strong>{{ $data->cep }}</p>
+                                <p><strong>Estado civil: {{ $data->estado_civil }}</strong></p>
+                                <p><strong>Cidade: {{$data->cidade}}</strong></p>
+                                <p><strong>UF:</strong> {{$data->uf}}</p>
+                                <p><strong>Natural:</strong> {{$data->natural}}</p>
+                                <p><strong>CPF:</strong> {{$data->cpf}}</p>
+                                <p><strong>RG:</strong> {{$data->rg}}</p>
+                                <p><strong>Cargo:</strong> {{$data->cargo}}</p>
+                                <p><strong>Nivel:</strong> {{$data->nivel}}</p>
+                                <p><strong>Lotação:</strong> {{$data->lotacao}}</p>
+                                <p><strong>Pai:</strong> {{$data->pai}}</p>
+                                <p><strong>Mãe:</strong> {{$data->mae}}</p>
                             </div>
                         </div>
                     </div>

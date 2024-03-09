@@ -43,7 +43,7 @@
                                     <div class="row text-center">
                                         <div class="col-md-12" \>
                                             <div class="alert alert-success text-center"
-                                                style="color: white; margin: 10px;">
+                                                style="color: white;">
                                                 {{ session('msg') }}
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@
 
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <button type="submit" class="btn btn-info" style="margin-top: 10px">Salvar</button>
+                                                    <button type="submit" class="btn btn-info">Salvar</button>
                                                 </div>
                                             </div>
                                         </form>
