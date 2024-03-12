@@ -52,13 +52,13 @@ class RegisterController extends Controller
     {
         Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => 'required',
+            'cpf' => 'required',
             // 'role' => 'required',
             // 'matricula' => 'required',
             // 'sexo' => 'required',
             // 'endereco' => 'required',
             // 'profissao' => 'required',
-            'email' => ['required', 'string', 'unique:users'],
+            'cpf' => ['required', 'string', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         return view('home.registro.index');
@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
         User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'cpf' => $request->cpf,
             'role' => $request->role,
             'matricula' => $request->matricula,
             'sexo' => $request->sexo,

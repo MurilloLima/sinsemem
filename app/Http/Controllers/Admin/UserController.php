@@ -157,7 +157,7 @@ class UserController extends Controller
 
         $data = User::find(auth()->user()->id);
         $data->name = $request->name;
-        $data->estado_civil = $request->estado_civil;
+        // $data->estado_civil = $request->estado_civil;
         $data->endereco = $request->endereco;
         $data->cep = $request->cep;
         $data->cidade = $request->cidade;
@@ -170,7 +170,7 @@ class UserController extends Controller
         $data->lotacao = $request->lotacao;
         $data->pai = $request->pai;
         $data->mae = $request->mae;
-        $data->save();
+        $data->update();
         return redirect()->back()->with('msg', 'Inscrição realizada com sucesso!');
     }
 

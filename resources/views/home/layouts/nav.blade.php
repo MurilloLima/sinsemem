@@ -70,15 +70,15 @@
              <div class="">
                  <form action="{{ route('login') }}" method="post">
                      @csrf
-                     <label for="">CPF/E-mail</label>
-                     <input type="text" name="email" class="form-control">
-                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                     <label for="">CPF</label>
+                     <input oninput="mascara(this)" type="text" name="cpf" class="form-control">
+                     <x-input-error :messages="$errors->get('cpf')" class="mt-2" />
                      <label for="">Senha</label>
                      <input type="password" name="password" class="form-control">
                      <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         <br>
                         <input type="submit" value="Entrar" class="btn" style="">
-                        {{-- <a href="">Esqueci a senha</a> --}}
+                        <a href="{{ route('home.pages.reset') }}">Esqueci a senha</a>
                  </form>
              </div>
          </div>

@@ -32,7 +32,9 @@ Route::get('app/download/', [HomeController::class, 'download'])->name('home.pag
 //politica
 Route::get('politica/', [HomeController::class, 'politica'])->name('home.pages.politica');
 
-// //login
+// reset senha
+Route::get('login/reset', [HomeController::class, 'reset'])->name('home.pages.reset');
+
 // Route::post('auth/', [HomeController::class, 'authenticate'])->name('home.authenticate');
 
 

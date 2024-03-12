@@ -37,7 +37,7 @@ class UserController extends Controller
             // 'matricula' => 'required',
             // 'sexo' => 'required',
             // 'endereco' => 'required',
-            'email' => 'required|unique:users',
+            'cpf' => 'required|unique:users',
             'password' => 'required',
         ]);
 
@@ -49,7 +49,7 @@ class UserController extends Controller
             // 'matricula' => $request->matricula,
             // 'sexo' => $request->sexo,
             // 'endereco' => $request->endereco,
-            'email' => $request->email,
+            'cpf' => $request->email,
             'password' => Hash::make($request->password)
         ]);
         return redirect(RouteServiceProvider::HOME);

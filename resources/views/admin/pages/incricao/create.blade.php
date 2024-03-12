@@ -77,6 +77,7 @@
                                                             <option value="Separado">Separado</option>
                                                             <option value="Divorciado">Divorciado</option>
                                                             <option value="Viúvo">Viúvo</option>
+
                                                         </select>
                                                     </div>
 

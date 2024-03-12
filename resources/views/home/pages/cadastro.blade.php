@@ -41,8 +41,8 @@
                             <label for="">Nome completo</label>
                             <input type="text" name="name" class="form-control">
 
-                            <label for="">E-mail*</label>
-                            <input type="email" name="email" class="form-control">
+                            <label for="">CPF*</label>
+                            <input oninput="mascara(this)" type="text" name="email" class="form-control">
 
                             <label for="">Matrícula funcional</label>
                             <input type="text" name="matricula" class="form-control">
