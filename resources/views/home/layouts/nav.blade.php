@@ -14,7 +14,7 @@
                      <!-- ***** Menu Start ***** -->
                      <ul class="nav">
                          <li class="scroll-to-section">
-                             <a href="/">Home</a>
+                             <a href="/">Início</a>
                          </li>
                          {{-- <li class="scroll-to-section">
                              <a href="#Filiados">Sobre</a>
@@ -27,7 +27,7 @@
                              <a href="#congressos">Assembleia</a>
                          </li>
                          <li class="scroll-to-section">
-                             <a href="#noticias">Noticias</a>
+                             <a href="#noticias">Matérias</a>
                          </li>
 
                          {{-- <li class="scroll-to-section"><a href="#newsletter">Arquivos</a></li> --}}
@@ -71,8 +71,8 @@
                  <form action="{{ route('login') }}" method="post">
                      @csrf
                      <label for="">CPF</label>
-                     <input oninput="mascara(this)" type="text" name="cpf" class="form-control">
-                     <x-input-error :messages="$errors->get('cpf')" class="mt-2" />
+                     <input oninput="mascara(this)" type="text" name="email" class="form-control">
+                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                      <label for="">Senha</label>
                      <input type="password" name="password" class="form-control">
                      <x-input-error :messages="$errors->get('password')" class="mt-2" />

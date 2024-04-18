@@ -14,9 +14,10 @@ class User extends Authenticatable
 
     protected $table = "users";
 
-   
+
     protected $fillable = [
         'name',
+        'status',
         'cpf',
         'role',
         'profissao',
@@ -26,6 +27,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function status()
+    {
+        return $this->hasOne(User::class, 'id', 'servidor_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

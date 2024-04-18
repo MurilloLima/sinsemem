@@ -42,8 +42,7 @@
                                 @if (session('msg'))
                                     <div class="row text-center">
                                         <div class="col-md-12" \>
-                                            <div class="alert alert-success text-center"
-                                                style="color: white;">
+                                            <div class="alert alert-success text-center" style="color: white;">
                                                 {{ session('msg') }}
                                             </div>
                                         </div>
@@ -62,8 +61,16 @@
                                                 <div class="col-sm-6">
                                                     <div class="row">
                                                         <div class="col-6">
-                                                            <input type="text" class="form-control" name="title"
-                                                                placeholder="Nome">
+                                                            <select name="title" class="form-control">
+                                                                <option value="RG">RG</option>
+                                                                <option value="CPF">CPF</option>
+                                                                <option value="CONTRA-CHEQUE">CONTRA-CHEQUE</option>
+                                                                <option value="COMPROVANTE DE ENDEREÇO">COMPROVANTE DE
+                                                                    ENDEREÇO</option>
+                                                                <option value="DECLARAÇÃO DE DESCONTO SINDICAL">DECLARAÇÃO
+                                                                    DE DESCONTO SINDICAL</option>
+                                                                <option value="TERMO DE POSSE">TERMO DE POSSE</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-6">
 
@@ -105,7 +112,7 @@
                                                                 </td>
                                                                 <td>
                                                                     <a
-                                                                        href="{{ route('admin.pages.arquivos.destroy', [$item->id]) }}">Deletar</a>
+                                                                        href="{{ asset('upload/arquivo/' . $item->file) }}">Baixar</a>
                                                                 </td>
                                                             </tr>
                                                         @endforeach

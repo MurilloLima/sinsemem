@@ -40,11 +40,11 @@
                 <div class="footer-widget">
                     <h4>Sobre-nos</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Início</a></li>
                         <li><a href="#">Afiliada</a></li>
                         <li><a href="#">Midias</a></li>
                         <li><a href="#">Congressos</a></li>
-                        <li><a href="#">Notícias</a></li>
+                        <li><a href="#">Matérias</a></li>
                     </ul>
                     {{-- <ul>
                         <li><a href="#">About</a></li>

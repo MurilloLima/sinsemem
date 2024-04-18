@@ -55,6 +55,7 @@
                                             <th>Nome</th>
                                             <th>Telefone</th>
                                             <th>Cargo</th>
+                                            <th>Startus</th>
                                             <th style="width: 40px">#</th>
                                         </tr>
                                     </thead>
@@ -65,6 +66,7 @@
                                                 <td>{{ $item->assunto }}</td>
                                                 <td>{{ $item->assunto }}</td>
                                                 <td>{{ $item->horario }}</td>
+                                                <td>Ativo</td>
                                                 <td>
                                                     <div class="card-tools">
                                                         <form action="{{ route('admin.reunioes.pages.destroy') }}"

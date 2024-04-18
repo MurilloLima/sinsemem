@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\NoticiasController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CongressoController;
 use App\Http\Controllers\Admin\InscricaoController;
+use App\Http\Controllers\Admin\NoticiasController;
 use App\Http\Controllers\Admin\ReunioesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ArquivoController;
@@ -15,6 +16,16 @@ use App\Models\Reunioe;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 Route::get('/', [HomeController::class, 'index'])->name('home.pages.index');
 
@@ -35,14 +46,12 @@ Route::get('politica/', [HomeController::class, 'politica'])->name('home.pages.p
 // reset senha
 Route::get('login/reset', [HomeController::class, 'reset'])->name('home.pages.reset');
 
-// Route::post('auth/', [HomeController::class, 'authenticate'])->name('home.authenticate');
-
 
 // administrativo
 Route::get('/dashboard', function () {
-    $noticias = Noticia::all();
-    $users = User::all();
-    $reunioes = Reunioe::all();
+    $noticias = Noticia::latest()->get();
+    $users = User::latest()->get();
+    $reunioes = Reunioe::latest()->get();
     return view('admin.pages.index', compact(['users', 'noticias', 'reunioes']));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -69,10 +78,10 @@ Route::middleware('auth')->group(function () {
     //users
     Route::get('admin/users', [UserController::class, 'index'])->name('admin.pages.users.index');
 
-     //servidores
-     Route::get('admin/servidores', [UserController::class, 'index'])->name('admin.pages.servidores.index');
-     Route::get('admin/servidores/create', [UserController::class, 'servidores'])->name('admin.pages.servidores.create');
-     Route::post('admin/servidores/store', [UserController::class, 'servistore'])->name('admin.pages.servidores.store');
+    //servidores
+    Route::get('admin/servidores', [UserController::class, 'index'])->name('admin.pages.servidores.index');
+    Route::get('admin/servidores/create', [UserController::class, 'servidores'])->name('admin.pages.servidores.create');
+    Route::post('admin/servidores/store', [UserController::class, 'servistore'])->name('admin.pages.servidores.store');
 
     // user admin
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -103,8 +112,7 @@ Route::middleware('auth')->group(function () {
 
     //altera foto
     Route::post('admin/foto/perfil', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
-
-
 });
+
 
 require __DIR__ . '/auth.php';

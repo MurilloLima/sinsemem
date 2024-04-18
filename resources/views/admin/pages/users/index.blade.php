@@ -43,6 +43,7 @@
                                             <th style="width: 10px">#</th>
                                             <th>Nome</th>
                                             <th>Profissão</th>
+                                            <th>Status</th>
                                             <th style="width: 100px">#</th>
                                         </tr>
                                     </thead>
@@ -52,6 +53,7 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->profissao }}</td>
+                                                <th>{{ $item->status }}</th>
                                                 <td>
                                                     <a href="{{ route('admin.pages.mensagem.index') }}">
                                                         <i class="nav-icon far fa-envelope"></i>

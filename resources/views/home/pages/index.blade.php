@@ -117,7 +117,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading">
-                        <h4>Notícias</h4>
+                        <h4>Matérias</h4>
                         <img src="{{ asset('home/assets/images/heading-line-dec.png') }}" alt="">
                         <p>Mantenha-se atualizado sobre tudo acontece.</p>
                     </div>

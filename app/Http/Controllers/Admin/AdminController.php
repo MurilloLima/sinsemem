@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Noticia;
+use App\Models\Reunioe;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -14,7 +17,9 @@ class AdminController extends Controller
     public function index()
     {
         $noticias = Noticia::all();
-        return view('admin.pages.index', compact('noticias'));
+        $users = User::all();
+        $reunioes = Reunioe::all();
+        return view('admin.pages.index', compact('noticias', 'users', 'reunioes'));
     }
 
     /**
