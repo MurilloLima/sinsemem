@@ -66,6 +66,18 @@
                                                             value="{{ auth()->user()->name }}" name="name"
                                                             placeholder="Nome completo">
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">CPF</label>
+                                                        <input type="text" class="form-control"
+                                                            value="{{ auth()->user()->cpf }}" name="name"
+                                                            placeholder="CPF">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">E-mail</label>
+                                                        <input type="text" class="form-control"
+                                                            value="{{ auth()->user()->email2 }}" name="name"
+                                                            placeholder="E-mail">
+                                                    </div>
 
                                                     <div class="form-group">
                                                         <label>Estado civil</label>
@@ -82,7 +94,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Endereco</label>
+                                                        <label for="exampleInputEmail1">Endereço</label>
                                                         <input type="text" name="endereco" class="form-control"
                                                             value="{{ auth()->user()->endereco }}" placeholder="Endereço">
                                                     </div>
@@ -167,7 +179,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label>Lotacao</label>
+                                                        <label>Lotação</label>
                                                         <input type="text" name="lotacao" class="form-control"
                                                             value="{{ auth()->user()->lotacao }}" placeholder="">
                                                     </div>
