@@ -49,13 +49,14 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="card card-danger">
+                                <div class="card card-danger text-center">
                                     <div class="card-header">
                                         <h3 class="card-title">Carteira de sócio</h3>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body text-center">
                                         <div class="row" style="margin-top: 10px;">
                                             <div class="col-sm-12">
+                                                <h3>Frente</h3>
                                                 <div class="carteira">
                                                     <div class="logocarteira">
                                                         <img src="{{ asset('home/assets/images/logo200x200px.png') }}"
@@ -79,6 +80,18 @@
                                                     <p class="nomeuser">NOME: {{ auth()->user()->name }}</p>
                                                     <p class="nomeuser">CARGO: {{ auth()->user()->cargo }} </p>
                                                     <p class="nomeuser">MATRÍCULA: {{ auth()->user()->matricula }}</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <h3>Verso</h3>
+                                                <div class="carteira text-center">
+                                                    <div class="" style="margin-top: 40px">
+                                                        <img src="{{ asset('upload/qr.png') }}" width="140" height="120"
+                                                            height="60" width="60" alt="" width="100px">
+                                                            <p>CNPJ: 06.100.310/0001-64</p>
+                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
