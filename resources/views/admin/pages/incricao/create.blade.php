@@ -61,28 +61,28 @@
 
                                                 <div class="card-body">
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Nome completo</label>
+                                                        <label for="">Nome completo</label>
                                                         <input type="text" class="form-control"
                                                             value="{{ auth()->user()->name }}" name="name"
                                                             placeholder="Nome completo">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">CPF</label>
-                                                        <input type="text" class="form-control"
-                                                            value="{{ auth()->user()->cpf }}" name="name"
+                                                        <label for="">CPF</label>
+                                                        <input type="text" class="form-control" oninput="mascara(this)"
+                                                            value="{{ auth()->user()->email }}" name="email"
                                                             placeholder="CPF">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">E-mail</label>
+                                                        <label for="">E-mail</label>
                                                         <input type="text" class="form-control"
-                                                            value="{{ auth()->user()->email2 }}" name="name"
+                                                            value="{{ auth()->user()->email2 }}" name="email2"
                                                             placeholder="E-mail">
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label>Estado civil</label>
                                                         <select class="custom-select" name="estado_civil">
-                                                            <option value="{{ auth()->user()->estado_civil }}">
+                                                            <option value="{{ auth()->user()->estado_civil }}" selected>
                                                                 {{ auth()->user()->estado_civil }}</option>
                                                             <option value="Solteiro">Solteiro</option>
                                                             <option value="Casado">Casado</option>
@@ -94,25 +94,25 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Endereço</label>
+                                                        <label for="">Endereço</label>
                                                         <input type="text" name="endereco" class="form-control"
                                                             value="{{ auth()->user()->endereco }}" placeholder="Endereço">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">CEP</label>
+                                                        <label for="">CEP</label>
                                                         <input type="text" name="cep" class="form-control"
                                                             value="{{ auth()->user()->cep }}" placeholder="00000-00">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Cidade</label>
+                                                        <label for="">Cidade</label>
                                                         <input type="text" name="cidade" class="form-control"
                                                             value="{{ auth()->user()->cidade }}" placeholder="Cidade">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">UF</label>
+                                                        <label for="">UF</label>
                                                         <select name="uf" class="form-control">
                                                             <option value="{{ auth()->user()->uf }}">
                                                                 {{ auth()->user()->uf }}</option>
@@ -147,33 +147,32 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Nacionalidade</label>
+                                                        <label for="">Nacionalidade</label>
                                                         <input type="text" name="nacionalidade" class="form-control"
                                                             value="{{ auth()->user()->nacionalidade }}">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Natural</label>
+                                                        <label for="">Natural</label>
                                                         <input type="text" name="natural" class="form-control"
-                                                            value="{{ auth()->user()->natural }}"
-                                                            placeholder="Nacionalidade">
+                                                            value="{{ auth()->user()->natural }}" placeholder="Natural">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">RG</label>
+                                                        <label for="">RG</label>
                                                         <input type="text" name="rg" class="form-control"
                                                             value="{{ auth()->user()->rg }}" placeholder="">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Cargo</label>
+                                                        <label for="">Cargo</label>
                                                         <input type="text" name="cargo" class="form-control"
                                                             value="{{ auth()->user()->cargo }}"
                                                             placeholder="Nacionalidade">
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Nivil</label>
+                                                        <label for="">Nivil</label>
                                                         <input type="text" name="nivel" class="form-control"
                                                             value="{{ auth()->user()->nivel }}" placeholder="">
                                                     </div>

@@ -36,7 +36,8 @@
                                 <p><strong>Nome:</strong> {{ $data->name }}</p>
                                 <p><strong>Sexo:</strong> {{ $data->sexo }}</p>
                                 <p><strong>Matricula:</strong> {{ $data->matricula }}</p>
-                                <p><strong>E-mail:</strong> {{ $data->email }}</p>
+                                <p><strong>CPF:</strong> {{ $data->email }}</p>
+                                <p><strong>E-mail:</strong> {{ $data->email2 }}</p>
                                 <p><strong>Endereco:</strong>{{ $data->endereco }}</p>
                                 <p><strong>CEP:</strong>{{ $data->cep }}</p>
                                 <p><strong>Estado civil: {{ $data->estado_civil }}</strong></p>

@@ -133,10 +133,12 @@ class UserController extends Controller
     public function update(Request $request)
     {
         // dd($request->all());
+        $data = User::find(auth()->user()->id);
         // dd(User::find(auth()->user()->id));
         $request->validate(
             [
                 'name' => 'required',
+                // 'email' => 'required',
                 'estado_civil' => 'required',
                 'endereco' => 'required',
                 'cep' => 'required',
@@ -154,21 +156,21 @@ class UserController extends Controller
             ]
         );
 
-
-        $data = User::find(auth()->user()->id);
         $data->name = $request->name;
-        // $data->estado_civil = $request->estado_civil;
+        $data->estado_civil = $request->estado_civil;
         $data->endereco = $request->endereco;
         $data->cep = $request->cep;
         $data->cidade = $request->cidade;
         $data->uf = $request->uf;
         $data->natural = $request->natural;
         $data->rg = $request->rg;
-        // $data->email = $request->email; //email
+        $data->email = $request->email; //email
+        $data->email2 = $request->email2; //email
         $data->cargo = $request->cargo;
         $data->nivel = $request->nivel;
         $data->lotacao = $request->lotacao;
         $data->pai = $request->pai;
+        $data->nacionalidade = $request->nacionalidade;
         $data->mae = $request->mae;
         $data->update();
         return redirect()->back()->with('msg', 'Inscrição realizada com sucesso!');

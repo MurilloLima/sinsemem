@@ -56,8 +56,9 @@ class InscricaoController extends Controller
         $request->validate(
             [
                 'name' => 'required',
-                'cpf' => 'required',
+                'email' => 'required',
                 'email2' => 'required',
+                'cpf' => 'required',
                 'estado_civil' => 'required',
                 'endereco' => 'required',
                 'cep' => 'required',
@@ -75,7 +76,6 @@ class InscricaoController extends Controller
             ]
         );
 
-
         $data = User::find(auth()->user()->id);
         $data->name = $request->name;
         $data->cpf = $request->cpf;
@@ -85,9 +85,10 @@ class InscricaoController extends Controller
         $data->cep = $request->cep;
         $data->cidade = $request->cidade;
         $data->uf = $request->uf;
+        $data->nacionalidade = $request->nacionalidade;
         $data->natural = $request->natural;
         $data->rg = $request->rg;
-        $data->email = $request->email; //cpf
+        $data->email2 = $request->email2; //cpf
         $data->cargo = $request->cargo;
         $data->nivel = $request->nivel;
         $data->lotacao = $request->lotacao;

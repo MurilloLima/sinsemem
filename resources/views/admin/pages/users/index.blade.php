@@ -53,7 +53,7 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->profissao }}</td>
-                                                <th>{{ $item->status }}</th>
+                                                <th>{{ $item->status ?? 'Ativo' }}</th>
                                                 <td>
                                                     <a href="{{ route('admin.pages.mensagem.index') }}">
                                                         <i class="nav-icon far fa-envelope"></i>
@@ -61,6 +61,10 @@
 
                                                     <a href="{{ route('admin.user.view', [$item->id]) }}">
                                                         <i class="nav-icon far fa-user"></i>
+                                                    </a>
+                                                    <a href="" title="Alterar startus" data-toggle="modal"
+                                                        data-target="#modal-default">
+                                                        <i class="nav-icon far fa-edit"></i>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -75,5 +79,36 @@
             </div>
         </section>
         <!-- /.content -->
+    </div>
+
+    {{-- modal --}}
+    <div class="modal fade" id="modal-default" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <form action="" method="post">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Alterar startus</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <select name="startus" class="form-control">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Alterar</button>
+                    </div>
+                </div>
+            </form>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
 @endsection

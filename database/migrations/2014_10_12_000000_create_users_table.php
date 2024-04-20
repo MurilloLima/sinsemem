@@ -15,8 +15,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('cpf')->unique();
-            $table->string('email2')->unique();
+            $table->string('cpf')->unique()->nullable();
+            $table->string('email2')->unique()->nullable();
+            $table->string('nacionalidade')->unique()->nullable();
             $table->string('status')->default('Ativo')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -29,7 +30,6 @@ return new class extends Migration
             $table->text('cidade')->nullable();
             $table->text('uf')->nullable();
             $table->text('natural')->nullable();
-            $table->string('cpf')->nullable();
             $table->string('rg')->nullable();
             $table->string('cargo')->nullable();
             $table->string('nivel')->nullable();
