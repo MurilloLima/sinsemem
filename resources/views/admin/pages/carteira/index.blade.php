@@ -70,7 +70,7 @@
                                                     </div>
                                                     <div class="bolder"></div>
                                                     <div class="foto-user text-center">
-                                                        <img src="{{ asset('upload/fotoperfil/' . auth()->user()->img) }}"
+                                                        <img src="{{ asset('upload/fotoperfil/' . auth()->user()->img) ?? 'upload/fotoperfil/perfil.jpg' }}"
                                                             alt="">
 
                                                         <a href="" data-toggle="modal"
@@ -87,11 +87,12 @@
                                                 <h3>Verso</h3>
                                                 <div class="carteira text-center">
                                                     <div class="" style="margin-top: 40px">
-                                                        <img src="{{ asset('upload/qr.png') }}" width="140" height="120"
-                                                            height="60" width="60" alt="" width="100px">
-                                                            <p>CNPJ: 06.100.310/0001-64</p>
+                                                        <img src="{{ asset('upload/qr.png') }}" width="140"
+                                                            height="120" height="60" width="60" alt=""
+                                                            width="100px">
+                                                        <p>CNPJ: 06.100.310/0001-64</p>
                                                     </div>
-                                                   
+
                                                 </div>
                                             </div>
                                         </div>
