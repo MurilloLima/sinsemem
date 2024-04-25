@@ -58,9 +58,9 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function reset(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

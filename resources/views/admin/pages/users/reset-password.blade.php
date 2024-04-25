@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title', 'Arquivos digitais')
+@section('title', 'Resetar senha')
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
@@ -51,53 +51,25 @@
                                 @endif
                                 <div class="card card-danger text-center">
                                     <div class="card-header">
-                                        <h3 class="card-title">Carteira de sócio</h3>
+                                        <h3 class="card-title">Resetar senha</h3>
                                     </div>
                                     <div class="card-body text-center">
-                                        <a href="" class="btn btn-primary">Foto perfil</a>
-
-                                        <div class="row" style="margin-top: 10px;">
-                                            <div class="col-sm-12">
-                                                <h3>Frente</h3>
-                                                <button class="botao" data-toggle="modal"
-                                                    data-target=".bd-example-modal-lg">
-                                                    <div class="logocarteira">
-                                                        <img src="{{ asset('home/assets/images/logo200x200px.png') }}"
-                                                            height="60" width="60" alt="" width="100px">
+                                        <div class="row text-center" style="margin-top: 10px;">
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-4">
+                                                <form action="{{ route('admin.pages.resetupdate') }}" method="post">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="">Nova senha</label>
+                                                        <input class="form-control" name="password" type="text" name=""
+                                                            id="">
                                                     </div>
-                                                    <div class="text-header text-center">
-                                                        <p>SINDICATO DOS SERVIDORES DA EDUCAÇÃO <br>
-                                                            DO MUNICIPIO ESTREITO-MA <br>
-                                                            CNPJ: 06.100.310/0001-64
-                                                        </p>
+                                                    <div class="">
+                                                        <button class="btn btn-primary" type="submit">Alterar</button>
                                                     </div>
-                                                    <div class="bolder"></div>
-                                                    <div class="foto-user">
-                                                        <img src="{{ asset('upload/fotoperfil/' . auth()->user()->img) }}"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="col-md-12 text-center">
-                                                        <p class="nomeuser"><strong>{{ auth()->user()->name }}</strong></p>
-                                                        <p class="nomeuser"><strong>{{ auth()->user()->cargo }}</strong></p>
-                                                        <p class="nomeuser">
-                                                            <strong>Matrícula:
-                                                                {{ auth()->user()->matricula }}</strong>
-                                                        </p>
-                                                    </div>
-                                                </button>
+                                                </form>
                                             </div>
-
-                                            <div class="col-sm-12">
-                                                <h3>Verso</h3>
-                                                <button class="carteira text-center">
-                                                    <div class="" style="margin-top: 30px">
-                                                        <img src="{{ asset('upload/qr.png') }}" width="100"
-                                                            height="100" alt="" width="100px">
-                                                        <p>CNPJ: 06.100.310/0001-64</p>
-                                                    </div>
-
-                                                </button>
-                                            </div>
+                                            <div class="col-sm-4"></div>
                                         </div>
                                     </div>
                                 </div>

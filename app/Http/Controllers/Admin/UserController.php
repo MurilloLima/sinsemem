@@ -213,4 +213,18 @@ class UserController extends Controller
         $data = User::find($id);
         return view('admin.pages.users.view', compact('data'));
     }
+
+    public function reset()
+    {
+        return view('admin.pages.users.reset-password');
+    }
+
+    public function resetupdate(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'password' => Hash::make($request->password)
+        ]);
+        return redirect()->back()->with('msg', 'Senha alterada com sucesso!');
+    }
 }

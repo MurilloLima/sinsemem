@@ -172,7 +172,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="">Nivil</label>
+                                                        <label for="">Nívil</label>
                                                         <input type="text" name="nivel" class="form-control"
                                                             value="{{ auth()->user()->nivel }}" placeholder="">
                                                     </div>

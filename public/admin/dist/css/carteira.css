@@ -1,20 +1,32 @@
 .carteira {
     margin: 0 auto;
     width: 320px;
-    height: 210px;
+    /* height: 210px; */
     /* background-color: aliceblue !important; */
     border: 1px solid #000;
     border-radius: 10px;
     color: #000;
     font-size: 10px !important;
     margin-bottom: 40px;
+    padding: 20px;
 
 }
 
 .logocarteira {
-    width: 80px;
+    width: 120px;
+    height: auto;
     float: left;
-    padding-left: 15px;
+    padding-left: 5px;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center !important;
+}
+
+.logocarteira img {
+    width: 80px;
+    height: auto;
+    float: left;
+    padding-left: 10px;
     padding-top: 5px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -23,20 +35,25 @@
 
 .text-header p {
     font-weight: bold;
+    font-size: 12px;
+    padding-top: 20px;
     /* margin-top: 10px; */
 }
 
 .bolder {
     float: left;
+    /* width: 100%; */
+    height: 1px;
     width: 100%;
     height: 1px;
     background-color: #000;
+    font-size: 12px;
 }
 
 .foto-user {
     float: left;
-    width: 100px;
-    height: 120px;
+    width: 120px;
+    height: auto;
     padding: 5px;
     /* border: 3px solid #000; */
 
@@ -44,14 +61,39 @@
 
 .foto-user img {
     width: 100%;
-    height: 100%;
+    height: 100px;
 }
 
+.foto-user img {
+    border-radius: 8px;
+
+}
+.logocarteirazoom{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
 .nomeuser {
-    width: 200px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     height: 30px;
     float: right;
     margin: 5px;
-    padding: 5px;
+    /* padding: 5px; */
 }
+
+.botao {
+    border: none;
+    /* color: #fff; */
+    width: 320px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #000;
+    font-size: 12px;
+}
+
+/* zoom */

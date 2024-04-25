@@ -32,7 +32,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home.pages.index');
 //cadastro users
 Route::get('user/cadastro/', [HomeController::class, 'cadastro'])->name('home.pages.cadastro');
 //noticia
-Route::post('noticia/store/', [NoticiaController::class, 'store'])->name('home.pages.cadastro.store');
 Route::get('noticia/{slug}', [HomeController::class, 'view'])->name('home.pages.noticia.view');
 // servidor
 // Route::post('servidor/store/', [ControllersUserController::class, 'store'])->name('home.pages.servidor.store');
@@ -83,7 +82,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/servidores/create', [UserController::class, 'servidores'])->name('admin.pages.servidores.create');
     Route::post('admin/servidores/store', [UserController::class, 'servistore'])->name('admin.pages.servidores.store');
 
-    // user admin
+    //user admin
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -112,6 +111,11 @@ Route::middleware('auth')->group(function () {
 
     //altera foto
     Route::post('admin/foto/perfil', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
+
+    //resetar senha
+    Route::get('admin/reset/perfil', [UserController::class, 'reset'])->name('admin.pages.reset');
+    Route::post('admin/reset', [UserController::class, 'resetupdate'])->name('admin.pages.resetupdate');
+
 });
 
 

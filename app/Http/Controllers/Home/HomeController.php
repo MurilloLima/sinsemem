@@ -58,6 +58,7 @@ class HomeController extends Controller
     public function view($slug)
     {
         $data = Noticia::where('slug', $slug)->first();
+        dd($data);
         return view('home.pages.noticias.view', compact('data'));
     }
 
