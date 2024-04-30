@@ -119,7 +119,7 @@
                          <a href="{{ route('admin.pages.congresso.index') }}" class="nav-link">
                              <i class="nav-icon fas fa-angle-left"></i>
                              <p>
-                                 Assembreia
+                                 Assembleia
                              </p>
                          </a>
                      </li>
@@ -139,6 +139,16 @@
                              </p>
                          </a>
                      </li>
+                     <li class="nav-item">
+                         <a href="{{ route('admin.pages.agenda.index') }}" class="nav-link">
+                             <i class="nav-icon fas fa-envelope"></i>
+                             <p>
+                                 Agenda
+                             </p>
+                         </a>
+                     </li>
+
+
                      <form action="{{ route('logout') }}" method="post">
                          @csrf
                          <li class="nav-item">

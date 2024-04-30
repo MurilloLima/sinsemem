@@ -97,3 +97,17 @@
 }
 
 /* zoom */
+.botaozoom {
+    border: none;
+    /* color: #fff; */
+    width: 420px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #000;
+    font-size: 12px;
+}

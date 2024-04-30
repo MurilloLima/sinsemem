@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NoticiasController;
 use App\Http\Controllers\Admin\ReunioesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ArquivoController;
+use App\Http\Controllers\Home\AgendaController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\MensagenController;
 use App\Http\Controllers\NoticiaController;
@@ -35,6 +36,11 @@ Route::get('user/cadastro/', [HomeController::class, 'cadastro'])->name('home.pa
 Route::get('noticia/{slug}', [HomeController::class, 'view'])->name('home.pages.noticia.view');
 // servidor
 // Route::post('servidor/store/', [ControllersUserController::class, 'store'])->name('home.pages.servidor.store');
+
+// agenda
+Route::get('agenda/', [AgendaController::class, 'index'])->name('home.pages.agenda.index');
+Route::post('agenda/store', [AgendaController::class, 'store'])->name('home.pages.agenda.store');
+
 // users
 Route::post('users/store/', [UserController::class, 'store'])->name('home.pages.user.store');
 // download app
@@ -44,7 +50,6 @@ Route::get('politica/', [HomeController::class, 'politica'])->name('home.pages.p
 
 // reset senha
 Route::get('login/reset', [HomeController::class, 'reset'])->name('home.pages.reset');
-
 
 // administrativo
 Route::get('/dashboard', function () {
@@ -110,11 +115,14 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/carteira', [UserController::class, 'carteira'])->name('admin.pages.carteira.index');
 
     //altera foto
-    Route::post('admin/foto/perfil', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
+    Route::post('admin/user/foto/update', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
 
     //resetar senha
     Route::get('admin/reset/perfil', [UserController::class, 'reset'])->name('admin.pages.reset');
     Route::post('admin/reset', [UserController::class, 'resetupdate'])->name('admin.pages.resetupdate');
+
+    //agenda
+    Route::get('admin/agenda', [AgendaController::class, 'indexadmin'])->name('admin.pages.agenda.index');
 
 });
 

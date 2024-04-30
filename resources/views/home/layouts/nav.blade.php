@@ -20,7 +20,7 @@
                              <a href="#Filiados">Sobre</a>
                          </li> --}}
                          <li class="scroll-to-section">
-                             <a href="#reuniao">Edital de convocação</a>
+                             <a href="#reuniao">Convocação</a>
                          </li>
                          {{-- <li class="scroll-to-section"><a href="#pricing">Quem somos</a></li> --}}
                          <li class="scroll-to-section">
@@ -29,7 +29,9 @@
                          <li class="scroll-to-section">
                              <a href="#noticias">Matérias</a>
                          </li>
-
+                         <li class="scroll-to-section">
+                            <a href="{{ route('home.pages.agenda.index') }}">Agenda</a>
+                        </li>
                          {{-- <li class="scroll-to-section"><a href="#newsletter">Arquivos</a></li> --}}
                          <li>
                              <div class="gradient-button">

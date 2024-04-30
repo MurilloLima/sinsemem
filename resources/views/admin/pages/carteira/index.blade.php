@@ -54,13 +54,18 @@
                                         <h3 class="card-title">Carteira de sócio</h3>
                                     </div>
                                     <div class="card-body text-center">
-                                        <a href="" class="btn btn-primary">Foto perfil</a>
+                                        <br>
+
+                                        <button type="button" class="btn btn-default" data-toggle="modal"
+                                            data-target="#foto">
+                                            Alterar foto
+                                        </button>
+
 
                                         <div class="row" style="margin-top: 10px;">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-12 mb-2">
                                                 <h3>Frente</h3>
-                                                <button class="botao" data-toggle="modal"
-                                                    data-target=".bd-example-modal-lg">
+                                                <button class="botao" data-toggle="modal" data-target="#exampleModal">
                                                     <div class="logocarteira">
                                                         <img src="{{ asset('home/assets/images/logo200x200px.png') }}"
                                                             height="60" width="60" alt="" width="100px">
@@ -88,14 +93,12 @@
                                             </div>
 
                                             <div class="col-sm-12">
-                                                <h3>Verso</h3>
                                                 <button class="carteira text-center">
                                                     <div class="" style="margin-top: 30px">
                                                         <img src="{{ asset('upload/qr.png') }}" width="100"
                                                             height="100" alt="" width="100px">
                                                         <p>CNPJ: 06.100.310/0001-64</p>
                                                     </div>
-
                                                 </button>
                                             </div>
                                         </div>
@@ -177,38 +180,99 @@
         <!-- /.content -->
     </div>
 
+    {{-- carteira verso --}}
 
-    {{-- //modal --}}
-    <!-- Large modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+    <!-- /.modal -->
+    {{-- carteira frente --}}
+    <div class="col-6">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalfrente"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="padding: 20px">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 justify-content-md-center">
+                                <button class="botao" data-toggle="modal" data-target="#exampleModal">
+                                    <div class="logocarteira">
+                                        <img src="{{ asset('home/assets/images/logo200x200px.png') }}" height="60"
+                                            width="60" alt="" width="100px">
+                                    </div>
+                                    <div class="text-header text-center">
+                                        <p>SINDICATO DOS SERVIDORES DA EDUCAÇÃO <br>
+                                            DO MUNICIPIO ESTREITO-MA <br>
+                                            CNPJ: 06.100.310/0001-64
+                                        </p>
+                                    </div>
+                                    <div class="bolder"></div>
+                                    <div class="foto-user">
+                                        <img src="{{ asset('upload/fotoperfil/' . auth()->user()->img) }}"
+                                            alt="">
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <p class="nomeuser"><strong>{{ auth()->user()->name }}</strong></p>
+                                        <p class="nomeuser"><strong>{{ auth()->user()->cargo }}</strong></p>
+                                        <p class="nomeuser">
+                                            <strong>Matrícula:
+                                                {{ auth()->user()->matricula }}</strong>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                        <div class="col-md-2"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <!-- /.modal -->
+    {{-- carteira verso --}}
+    <div class="col-6">
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabelverso" aria-hidden="true">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 justify-content-md-center">
 
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+    {{-- //modal reset image --}}
+    <div class="modal fade" id="foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Alterar foto perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+
+                <form action="{{ route('admin.pages.carteira.foto') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="">Imagem perfil</label>
+                            <input type="file" name="img" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Alterar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- /.modal -->
 @endsection

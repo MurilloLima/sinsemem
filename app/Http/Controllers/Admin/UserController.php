@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -181,17 +180,14 @@ class UserController extends Controller
      */
     public function foto(Request $request)
     {
-        $request->validate(
-            [
-                'img' => 'required',
-            ]
-        );
-
-        $data = User::find(auth()->user()->id);
+        $request->validate([
+            'img' => 'required',
+        ]);
         // upload de image
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
             # code...
             $image = $request->file('img');
+
             // Define um aleatório para o arquivo baseado no timestamps atual
             $name = uniqid(date('HisYmd'));
 
@@ -200,12 +196,12 @@ class UserController extends Controller
 
             // Define finalmente o nome
             $nameFile = "{$name}.{$extension}";
-
-            $image->move(public_path('upload/fotoperfil/'), $nameFile);
+            $data = $this->user->find(auth()->user()->id);
+            $data->move(public_path('upload/fotoperfil'), $nameFile);
             $data->img = $nameFile;
-            $data->save();
-            return redirect()->back()->with('msg', 'Foto alterada com sucesso!');
+            $data->update();
         }
+        return redirect()->back()->with('msg', 'Edição efetuada com sucesso!');
     }
 
     public function view($id)

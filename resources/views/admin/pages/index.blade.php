@@ -82,6 +82,12 @@
                             <i class="fas fa-inbox"></i> Convocações
                         </a>
                     </div>
+                    <div class="col-lg-2 col-3">
+                        <a href="{{ route('admin.pages.agenda.index') }}" class="btn btn-app bg-danger btn-lg">
+                            {{-- <span class="badge bg-teal">{{ count($noticias) }}</span> --}}
+                            <i class="fas fa-envelope"></i> Agenda
+                        </a>
+                    </div>
                     {{-- <a href="" class="btn btn-app bg-info">
                                 <i class="fas fa-user"></i> Perfil
                             </a> --}}
