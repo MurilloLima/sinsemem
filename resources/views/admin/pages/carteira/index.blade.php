@@ -258,7 +258,8 @@
 
 
 
-                <form action="{{ route('admin.pages.carteira.foto') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.pages.carteira.foto', auth()->user()->id) }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">

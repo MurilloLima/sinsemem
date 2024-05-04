@@ -178,30 +178,19 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function foto(Request $request)
+    public function foto(Request $request, $id)
     {
         $request->validate([
-            'img' => 'required',
+            'img' => 'required'
         ]);
-        // upload de image
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
-            # code...
-            $image = $request->file('img');
-
-            // Define um aleatório para o arquivo baseado no timestamps atual
-            $name = uniqid(date('HisYmd'));
-
-            // Recupera a extensão do arquivo
-            $extension = $image->extension();
-
-            // Define finalmente o nome
-            $nameFile = "{$name}.{$extension}";
-            $data = $this->user->find(auth()->user()->id);
-            $data->move(public_path('upload/fotoperfil'), $nameFile);
-            $data->img = $nameFile;
+            $imageName = time() . '.' . $request->img->extension();
+            $request->img->move(public_path('upload/fotoperfil/'), $imageName);
+            $data = User::find($id);
+            $data->img = $imageName;
             $data->update();
+            return redirect()->back()->with('msg', 'Foto alterada com sucesso!');
         }
-        return redirect()->back()->with('msg', 'Edição efetuada com sucesso!');
     }
 
     public function view($id)

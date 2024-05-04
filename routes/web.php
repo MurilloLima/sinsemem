@@ -116,7 +116,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/carteira', [UserController::class, 'carteira'])->name('admin.pages.carteira.index');
 
     //altera foto
-    Route::post('admin/user/foto/update', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
+    Route::post('admin/user/foto/update/{id}', [UserController::class, 'foto'])->name('admin.pages.carteira.foto');
 
     //resetar senha
     Route::get('admin/reset/perfil', [UserController::class, 'reset'])->name('admin.pages.reset');

@@ -83,7 +83,35 @@
                         </div>
                     </div>
                 @else
-                    
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">Mensagens</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">#</th>
+                                                <th>Assunto</th>
+                                                <th>Conteúdo</th>
+                                                {{-- <th style="width: 40px">#</th> --}}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($data as $item)
+                                                <tr>
+                                                    <td>{{ $item->title }}</td>
+                                                    <td>{{ $item->content }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endif
 
 
