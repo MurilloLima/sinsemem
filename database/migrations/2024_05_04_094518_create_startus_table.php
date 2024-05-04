@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('startus', function (Blueprint $table) {
             $table->id();
-            $table->integer('userid')->unsigned();
+            $table->unsignedBigInteger('userid');
             $table->string('startu')->default('Ativo');
             $table->foreign('userid')->references('id')->on('users');
             $table->timestamps();

@@ -75,7 +75,7 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->profissao }}</td>
-                                                <th>{{ $item->startu->startu }}</th>
+                                                <th>{{ $item->startu->startu ?? 'Ativo' }}</th>
                                                 <td>
                                                     <a href="{{ route('admin.pages.mensagem.index') }}">
                                                         <i class="nav-icon far fa-envelope"></i>
