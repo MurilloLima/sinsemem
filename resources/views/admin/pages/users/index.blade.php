@@ -21,7 +21,29 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+        <div class="row">
+            <div class="col-md-12">
+                @if ($errors->any())
+                    <div class="alert alert-danger text-center" style="margin: 10px;">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li style="text-align: center">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if (session('msg'))
+                    <div class="row text-center">
+                        <div class="col-md-12" \>
+                            <div class="alert alert-success text-center" style="color: white; margin: 10px;">
+                                {{ session('msg') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
 
+            </div>
+        </div>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -53,7 +75,7 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->profissao }}</td>
-                                                <th>{{ $item->status ?? 'Ativo' }}</th>
+                                                <th>{{ $item->startu->startu }}</th>
                                                 <td>
                                                     <a href="{{ route('admin.pages.mensagem.index') }}">
                                                         <i class="nav-icon far fa-envelope"></i>
@@ -63,11 +85,48 @@
                                                         <i class="nav-icon far fa-user"></i>
                                                     </a>
                                                     <a href="" title="Alterar startus" data-toggle="modal"
-                                                        data-target="#modal-default">
+                                                        data-target="#modal-default{{ $item->id }}">
                                                         <i class="nav-icon far fa-edit"></i>
                                                     </a>
                                                 </td>
                                             </tr>
+
+                                            {{-- modal --}}
+                                            <div class="modal fade" id="modal-default{{ $item->id }}"
+                                                aria-hidden="true" style="display: none;">
+                                                <div class="modal-dialog">
+                                                    <form action="{{ route('admin.pages.starts', $item->id) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Alterar startus</h4>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">×</span>
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                <select name="startu" class="form-control">
+                                                                    <option value="Ativo">Ativo</option>
+                                                                    <option value="Aposentado">Aposentado</option>
+                                                                    {{-- <option value=""></option> --}}
+                                                                    {{-- <option value=""></option> --}}
+                                                                </select>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-default"
+                                                                    data-dismiss="modal">Fechar</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Alterar</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -81,34 +140,5 @@
         <!-- /.content -->
     </div>
 
-    {{-- modal --}}
-    <div class="modal fade" id="modal-default" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <form action="" method="post">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Alterar startus</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <select name="startus" class="form-control">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-primary">Alterar</button>
-                    </div>
-                </div>
-            </form>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
+
 @endsection

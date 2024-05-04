@@ -12,6 +12,7 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\MensagenController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StartuController;
 use App\Models\Noticia;
 use App\Models\Reunioe;
 use App\Models\User;
@@ -124,6 +125,8 @@ Route::middleware('auth')->group(function () {
     //agenda
     Route::get('admin/agenda', [AgendaController::class, 'indexadmin'])->name('admin.pages.agenda.index');
 
+    // startus
+    Route::post('admin/startus/{id}', [StartuController::class, 'update'])->name('admin.pages.starts');
 });
 
 
