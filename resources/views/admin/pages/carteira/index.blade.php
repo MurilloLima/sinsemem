@@ -190,10 +190,9 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="padding: 20px">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4 justify-content-md-center" style="margin-left: 50px">
+                    <div class="content d-flex align-items-stretch w-100">
+                        <div class="d-flex text-center w-100">
+                            <div class="d-flex align-items-center w-100">
                                 <button class="botao" data-toggle="modal" data-target="#exampleModal">
                                     <div class="logocarteira">
                                         <img src="{{ asset('home/assets/images/logo200x200px.png') }}" height="60"
@@ -220,7 +219,6 @@
                                     </div>
                                 </button>
                             </div>
-                            <div class="col-md-4"></div>
                         </div>
                     </div>
                 </div>
