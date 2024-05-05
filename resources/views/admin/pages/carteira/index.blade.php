@@ -93,6 +93,7 @@
                                             </div>
 
                                             <div class="col-sm-12">
+                                                <h3>Verso</h3>
                                                 <button class="carteira text-center">
                                                     <div class="" style="margin-top: 30px">
                                                         <img src="{{ asset('upload/qr.png') }}" width="100"
