@@ -192,8 +192,8 @@
                 <div class="modal-content" style="padding: 20px">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 justify-content-md-center">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 justify-content-md-center" style="margin-left: 50px">
                                 <button class="botao" data-toggle="modal" data-target="#exampleModal">
                                     <div class="logocarteira">
                                         <img src="{{ asset('home/assets/images/logo200x200px.png') }}" height="60"
@@ -220,8 +220,8 @@
                                     </div>
                                 </button>
                             </div>
+                            <div class="col-md-4"></div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
                 </div>
             </div>
