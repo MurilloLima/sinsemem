@@ -30,7 +30,7 @@
                              <a href="#noticias">Matérias</a>
                          </li>
                          <li class="scroll-to-section">
-                            <a href="{{ route('home.pages.agenda.index') }}">Agenda</a>
+                            <a href="{{ route('home.pages.agenda.index') }}">Fale conosco</a>
                         </li>
                          {{-- <li class="scroll-to-section"><a href="#newsletter">Arquivos</a></li> --}}
                          <li>
@@ -59,7 +59,7 @@
      </div>
  </header>
  <!-- ***** Header Area End ***** -->
- 
+
  <div id="modal" class="popupContainer" style="display:none;">
      <div class="popupHeader">
          <span class="header_title">Entrar</span>

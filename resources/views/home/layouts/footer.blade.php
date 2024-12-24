@@ -45,6 +45,7 @@
                         <li><a href="#">Midias</a></li>
                         <li><a href="#">Congressos</a></li>
                         <li><a href="#">Matérias</a></li>
+                        <li><a href="{{ route('home.pages.agenda.index') }}">Fale conosco</a></li>
                     </ul>
                     {{-- <ul>
                         <li><a href="#">About</a></li>
@@ -62,7 +63,7 @@
                         {{-- <li><a href="#">link 2</a></li> --}}
                         {{-- <li><a href="#">link 3</a></li> --}}
                     </ul>
-                    
+
                 </div>
             </div>
             <div class="col-lg-3">
