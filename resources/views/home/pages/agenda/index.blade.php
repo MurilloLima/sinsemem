@@ -1,5 +1,5 @@
 @extends('home.layouts.app')
-@section('title', 'Agendar atendimento')
+@section('title', 'Fale conosco')
 
 @section('content')
     <div id="noticias" class="pricing-tables">
@@ -7,9 +7,11 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading">
-                        <h4>Agendar atendimento</h4>
+                        <h4>Fale conosco</h4>
                         <img src="{{ asset('home/assets/images/heading-line-dec.png') }}" alt="">
-                        <p>Preencha o fomulário baixa e agende seu atendimento.</p>
+                        <p>Preencha o fomulário baixa e agende seu atendimento. <br>
+                        E-mail: contato@sinsemem.org
+                        </p>
                     </div>
                 </div>
 
