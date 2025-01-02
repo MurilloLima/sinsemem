@@ -32,6 +32,9 @@
                          <li class="scroll-to-section">
                             <a href="{{ route('home.pages.agenda.index') }}">Fale conosco</a>
                         </li>
+                        <li class="scroll-to-section">
+                            <a href="https://www.sinsemem.org/contato" target="_blank">Contato</a>
+                        </li>
                          {{-- <li class="scroll-to-section"><a href="#newsletter">Arquivos</a></li> --}}
                          <li>
                              <div class="gradient-button">

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CongressoController;
 use App\Http\Controllers\Admin\InscricaoController;
 use App\Http\Controllers\Admin\NoticiasController;
@@ -9,8 +8,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ArquivoController;
 use App\Http\Controllers\Home\AgendaController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\MensagenController;
-use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StartuController;
 use App\Models\Noticia;
@@ -51,6 +50,9 @@ Route::get('politica/', [HomeController::class, 'politica'])->name('home.pages.p
 
 // reset senha
 Route::get('login/reset', [HomeController::class, 'reset'])->name('home.pages.reset');
+
+//contatos
+Route::get('contato/', [ContactController::class, 'index'])->name('home.pages.contact.index');
 
 // administrativo
 Route::get('/dashboard', function () {
